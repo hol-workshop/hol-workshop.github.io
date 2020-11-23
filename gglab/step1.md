@@ -18,7 +18,7 @@ A compartment is a collection of cloud assets, like compute instances, load bala
 
 3. Provide your name and description for your compartment...
 
-![](./files/vcn/compartment_2.png)
+![](./files/vcn/compartment_2.PNG)
 
 ## Step 2: Create VCN
 
