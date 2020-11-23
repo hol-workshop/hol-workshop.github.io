@@ -1,5 +1,5 @@
 - [Go back to main](/README.md)
-- [Go back to previous step](/step1.md)
+- [Go back to previous step](/gglab/step1.md)
 
 # Step 2
 description
