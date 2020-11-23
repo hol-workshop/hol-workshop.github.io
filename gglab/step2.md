@@ -95,3 +95,5 @@ Enter 'yes' when prompted for security message, and enter your passphrase.
 ![](./files/pgsql/pg_9.png)
 
 Ready.
+
+- [Go back to next step](/gglab/step3.md)
