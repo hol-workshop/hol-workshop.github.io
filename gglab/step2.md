@@ -75,7 +75,7 @@ Go to the OCI console. From OCI services menu, under Compute, click Instances.
 
 ![](./files/pgsql/pg_7.png)
 
-## 11. Wait for Instance to be in Running state. In Cloud Shell Terminal, enter:
+## 11. Wait for Instance to be in Running state
 - It will take 1-2 minutes..
 
 ![](./files/pgsql/pg_8.png)
