@@ -1,10 +1,10 @@
-## Welcome to GitHub Pages
+## Hi Guys, I am fixing this page as landing page for our lab
 
 You can use the [editor on GitHub](https://github.com/hol-workshop/hol-workshop.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Please check following Markdown guide lines. It's very easy to use, just need to spend few minutes :) 
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
