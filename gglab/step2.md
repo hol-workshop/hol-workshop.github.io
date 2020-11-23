@@ -2,11 +2,38 @@
 - [Go back to previous step](/gglab/step1.md)
 
 # Lab 2
-description
+Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances. You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
+
+## Step 1: Create SSH Keys Using Oracle Cloud Shell
+The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between endpoints. SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.
+The Cloud Shell machine is a small virtual machine running a Bash shell which you access through the OCI Console (Homepage). Cloud Shell comes with a pre-authenticated OCI CLI (Command Line Interface), set to the Console tenancy home page region, as well as up-to-date tools and utilities. To use the Cloud Shell machine, your tenancy administrator must grant the required IAM (Identity and Access Management) policy.
+
+- To start the Oracle Cloud shell, go to your Cloud console and click the cloud shell icon at the top right of the page.
+
+![](./files/pgsql/cloudshell_0.png)
+
+- Once the cloud shell has started, enter the following command. Identify your directory and create .ssh directory and go inside.
+
+![](./files/pgsql/cloudshell_1.png)
+
+- Enter the following command to create your ssh private and public key files.
+```
+ssh-keygen -b 2048 -t rsa -f id_rsa
+```
+
+Choose the key name you can remember. I gave "id_rsa" and this will be the keyname I will use it later to connect to my compute instances. Press Enter twice for no passphrase.
+
+![](./files/pgsql/cloudshell_2.png)
+
+- Note in the output that there are two files, a private key: id_rsa and a public key: id_rsa.pub. Keep the private key safe and don't share its content with anyone. The public key will be needed for various activities and can be uploaded to certain systems as well as copied and pasted to facilitate secure communications in the cloud. Copy "id_rsa.pub" file
+
+![](./files/pgsql/cloudshell_3.png)
+
 
 Go to the OCI console. From OCI services menu, under Compute, click Instances.
 
-## 1. Create your PostgreSQLDB instance
+## Step 2. Create your PostgreSQLDB instance
+
 - Click Create Instance. Fill out the dialog box:
     **Name your instance**: Enter a name
     **Create in Compartment**: Choose the same compartment you used to create the VCN
