@@ -44,7 +44,7 @@ Run the following command to log into the database:
 
 ```DBLOGIN sourcedb PostgreSQL USERID ogg1 PASSWORD ogg1```
 
-![](./files/ogg/ggsci_1.png)
+![](./files/ogg/ggsci_1.PNG)
 
 You should be able to see above information.
 
