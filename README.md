@@ -17,8 +17,8 @@ Once you are successfully created your cloud account, you will receive a confirm
 
 ### Lab steps
 
-- **LAB 1:** [Create your VCN](/step1.md)
-- **LAB 2:** [Create your PostgreSQL database](/step2.md)
-- **LAB 3:** [Provision your first DBCS in OCI](/step3.md)
-- **LAB 4:** [Create your Goldengate instance](/step4.md)
-- **LAB 5:** [Configure your migration](/step5.md)
+- **LAB 1:** [Create your VCN](/gglab/step1.md)
+- **LAB 2:** [Create your PostgreSQL database](/gglab/step2.md)
+- **LAB 3:** [Provision your first DBCS in OCI](/gglab/step3.md)
+- **LAB 4:** [Create your Goldengate instance](/gglab/step4.md)
+- **LAB 5:** [Configure your migration](/gglab/step5.md)
