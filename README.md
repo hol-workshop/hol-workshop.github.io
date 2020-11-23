@@ -15,10 +15,10 @@ Once you are successfully created your cloud account, you will receive a confirm
   - URL for the Console: [https://oracle.com](https://oracle.com)
   - Oracle Cloud Infrastructure supports the latest versions of Google Chrome, Firefox and Microsoft Edge.
 
-### Lab Structures
+### Lab steps
 
-- **LAB 1:** [Create your VCN](/files/vcn/step1.md)
+- **LAB 1:** [Create your VCN](/step1.md)
 - **LAB 2:** [Create your PostgreSQL database](/step2.md)
-- **LAB 3:** [Provision your first DBCS in OCI](/files/dbcs/step3.md)
-- **LAB 4:** [Create your Goldengate instance](/files/gg/step4.md)
-- **LAB 5:** [Configure your migration](/files/migrate/step5.md)
+- **LAB 3:** [Provision your first DBCS in OCI](/step3.md)
+- **LAB 4:** [Create your Goldengate instance](/step4.md)
+- **LAB 5:** [Configure your migration](/step5.md)
