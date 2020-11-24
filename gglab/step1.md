@@ -43,16 +43,14 @@ Be sure to review Overview of Networking to gain a full understanding of the net
 
 
 
-**STEP 1: Create Your VCN 
+### STEP 1: Create Your VCN 
 
 To create a VCN on Oracle Cloud Infrastructure:
 
-1. On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, [click on Set up a network with a wizard].
-(/https://oracle.github.io/learning-library/oci-library/oci-hol/virtual-cloud-networks/images/setupVCN1.png)
+1. On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, [click on Set up a network with a wizard](/https://oracle.github.io/learning-library/oci-library/oci-hol/virtual-cloud-networks/images/setupVCN1.png)
 
-2. Select VCN with Internet Connectivity, and then click Start VCN Wizard.
-(/https://oracle.github.io/learning-library/oci-library/oci-hol/virtual-cloud-networks/images/setupVCN2.png)
+2. Select VCN with Internet Connectivity, and then click [Start VCN Wizard](/https://oracle.github.io/learning-library/oci-library/oci-hol/virtual-cloud-networks/images/setupVCN2.png)
 
-3.Complete the following fields selecting your Root compartment:
+3. Complete the following fields selecting your Root compartment:
 >>>>>>> lab-1-JC
 
