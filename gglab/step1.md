@@ -47,10 +47,12 @@ Be sure to review Overview of Networking to gain a full understanding of the net
 
 To create a VCN on Oracle Cloud Infrastructure:
 
-1. On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard
+1. On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard.
+
 ![](./files/vcn/setupVCN2.PNG)
 
-2. Select VCN with Internet Connectivity, and then click Start VCN Wizard
+2. Select VCN with Internet Connectivity, and then click Start VCN Wizard.
+
 ![](./files/vcn/setupVCN3.PNG)
 
 3. Complete the following fields selecting your Root compartment:
