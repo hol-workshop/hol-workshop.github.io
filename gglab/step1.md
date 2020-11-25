@@ -3,7 +3,7 @@
 - [Go back to main](/README.md)
 # Lab 1
 
-We will create Compartment and VCN ...
+We will create Compartment and VCN.
 
 
 A compartment is a collection of cloud assets, like compute instances, load balancers, databases, etc. By default, a root compartment was created for you when you created your tenancy (ie when you registered for the trial account). It is possible to create everything in the root compartment, but Oracle recommends that you create sub-compartments to help manage your resources more efficiently.
@@ -47,10 +47,15 @@ Be sure to review Overview of Networking to gain a full understanding of the net
 
 To create a VCN on Oracle Cloud Infrastructure:
 
-1. On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, [click on Set up a network with a wizard](/https://oracle.github.io/learning-library/oci-library/oci-hol/virtual-cloud-networks/images/setupVCN1.png)
+1. On the Oracle Cloud Infrastructure Console Home page, under the Quick Actions header, click on Set up a network with a wizard
+![](./files/vcn/setupVCN2.PNG)
 
-2. Select VCN with Internet Connectivity, and then click [Start VCN Wizard](/https://oracle.github.io/learning-library/oci-library/oci-hol/virtual-cloud-networks/images/setupVCN2.png)
+2. Select VCN with Internet Connectivity, and then click Start VCN Wizard
+![](./files/vcn/setupVCN3.PNG)
 
 3. Complete the following fields selecting your Root compartment:
+
+
+
 >>>>>>> lab-1-JC
 
