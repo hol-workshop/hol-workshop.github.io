@@ -45,7 +45,7 @@ Choose your AD, some may see only one AD depending on your region and click on "
 ![](./files/pgsql/pg_2_1.png)
 
 #### 3. Change image 
-Any Ubuntu version should work, but stick to 18.04
+Use latest available ubuntu version, for example 20 in our case.
 
 ![](./files/pgsql/pg_2_2.png)
 
