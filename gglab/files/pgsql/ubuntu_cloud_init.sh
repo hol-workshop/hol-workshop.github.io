@@ -10,9 +10,6 @@ echo "UBUNTU - postgre repo is updated $(date -R)!" >> /home/ubuntu/install.log
 sudo apt-get update -y 
 echo "UBUNTU - ubuntu is updated $(date -R)!" >> /home/ubuntu/install.log
 
-sudo apt install unzip -y 
-echo "UBUNTU - unzip is installed $(date -R)!" >> /home/ubuntu/install.log
-
 sudo apt-get install postgresql -y 
 echo "UBUNTU - postgresql 13 is now installed $(date -R)!" >> /home/ubuntu/install.log
 
@@ -46,26 +43,17 @@ echo "POSTGRE - postgresql stopped $(date -R)!" >> /home/ubuntu/install.log
 sudo systemctl start postgresql
 echo "POSTGRE - postgresql started $(date -R)!" >> /home/ubuntu/install.log
 
-sudo -H -u postgres psql -c "CREATE DATABASE dvdrental;"
-echo "POSTGRE - dvdrental is created $(date -R)!" >> /home/ubuntu/install.log
+sudo -H -u postgres psql -c "CREATE DATABASE ParkingData;"
+echo "POSTGRE - ParkingData is created $(date -R)!" >> /home/ubuntu/install.log
 
-sudo -H -u postgres psql -c "CREATE ROLE ogg1 WITH REPLICATION LOGIN PASSWORD 'ogg1'"
-echo "POSTGRE - ogg1 user is created $(date -R)!" >> /home/ubuntu/install.log
+sudo -H -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
+echo "POSTGRE - postgres user is updated $(date -R)!" >> /home/ubuntu/install.log
 
-sudo curl -O https://sp.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip >> /home/ubuntu/install.log
-echo "POSTGRE - DVD RENTAL ZIP is downloaded $(date -R)!" >> /home/ubuntu/install.log
+sudo curl -O https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/cloudstarscee/b/Postgresql/o/parking.tar >> /home/ubuntu/install.log
+echo "POSTGRE - ParkingData is downloaded $(date -R)!" >> /home/ubuntu/install.log
 
-sudo unzip dvdrental.zip
-echo "POSTGRE - UNZIPPED DVD RENTAL  $(date -R)!" >> /home/ubuntu/install.log
-
-sudo -H -u postgres bash -c 'pg_restore --dbname=dvdrental --verbose dvdrental.tar'
-echo "POSTGRE - imported dvdrental database $(date -R)!" >> /home/ubuntu/install.log
-
-sudo -H -u postgres psql -d dvdrental -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to ogg1;"
-sudo -H -u postgres psql -d dvdrental -c "GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public to ogg1;"
-sudo -H -u postgres psql -d dvdrental -c "GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public to ogg1;"
-
-echo "POSTGRE - GRANT dvdrental/public database access to ogg1 $(date -R)!" >> /home/ubuntu/install.log
+sudo -H -u postgres bash -c 'pg_restore --dbname=parkingdata /parking.tar'
+echo "POSTGRE - imported ParkingData database $(date -R)!" >> /home/ubuntu/install.log
 
 sudo iptables -P INPUT ACCEPT
 sudo iptables -P OUTPUT ACCEPT
