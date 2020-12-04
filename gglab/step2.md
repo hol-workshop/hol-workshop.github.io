@@ -2,7 +2,7 @@
 - [Go back to previous step](/gglab/step1.md)
 
 # Lab 2
-Oracle Cloud Infrastructure Compute lets you provision and manage compute hosts, known as instances. You can launch instances as needed to meet your compute and application requirements. After you launch an instance, you can access it securely from your computer, restart it, attach and detach volumes, and terminate it when you're done with it. Any changes made to the instance's local drives are lost when you terminate it. Any saved changes to volumes attached to the instance are retained.
+Now let's continue to create your source PostgreSQL database in Oracle Cloud Infrastructure. In order to do so, we would have to create a Compute resource with Ubuntu OS 20.4 version. This lab 2 consists of two main steps.
 
 ## Step 1: Create SSH Keys Using Oracle Cloud Shell
 The SSH (Secure Shell) protocol is a method for secure remote login from one computer to another. SSH enables secure system administration and file transfers over insecure networks using encryption to secure the connections between endpoints. SSH keys are an important part of securely accessing Oracle Cloud Infrastructure compute instances in the cloud.
@@ -13,6 +13,10 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 ![](./files/pgsql/cloudshell_0.png)
 
 #### 2. Once the cloud shell has started, enter the following command. Identify your directory and create .ssh directory and go inside.
+```
+mkdir .ssh
+cd .ssh/
+```
 
 ![](./files/pgsql/cloudshell_1.png)
 
@@ -21,7 +25,7 @@ The Cloud Shell machine is a small virtual machine running a Bash shell which yo
 ssh-keygen -b 2048 -t rsa -f id_rsa
 ```
 
-Choose the key name you can remember. I gave "id_rsa" and this will be the keyname I will use it later to connect to my compute instances. Press Enter twice for no passphrase.
+Press Enter twice for no passphrase for prompt. It is entirely up to your choice whether to create it with or without passphrase.
 
 ![](./files/pgsql/cloudshell_2.png)
 
@@ -30,22 +34,25 @@ Note in the output that there are two files, a private key: id_rsa and a public 
 ![](./files/pgsql/cloudshell_3.png)
 
 ## Step 2. Create your PostgreSQLDB instance
+
 Now let's create our PostgreSQL database in OCI compute service. Launching an instance is simple and intuitive with few options to select. The provisioning of the compute instance will complete in less than a minute and the instance state will change from provisioning to running.
 
 #### 1. Navigate to the Compute tab and select Instances. 
 Click Create Instance. Fill out the dialog box:
     **Name your instance**: Enter a name
     **Create in Compartment**: Choose the same compartment you used to create the VCN
-    
+
+OCI Compute resource lets you provision and manage compute  hosts, known as instances. You can launch as many instances as needed to meet your compute and application requirements.
+
 ![](./files/pgsql/pg_1.png)
 
 #### 2. Choose AD 
-Choose your AD, some may see only one AD depending on your region and click on "Change Image", we will choose Ubuntu...
+Choose your Availability Domain, some may see only one AD depending on your region and click on "Change Image", we will choose Ubuntu...
 
 ![](./files/pgsql/pg_2_1.png)
 
 #### 3. Change image 
-Use latest available ubuntu version, for example 20 in our case.
+Use latest available ubuntu version, for example 20.4 in our case.
 
 ![](./files/pgsql/pg_2_2.png)
 
@@ -84,9 +91,11 @@ Instance provisioning is very easy in OCI and it it will take around 1-2 minutes
 
 ![](./files/pgsql/pg_8.png)
 
+After you launch an instance, you can access it securely from your computer or from cloud shell. 
+
 #### 12. Connect to your instance 
 
-Open cloud shell and check your connection to your new PostgreSQL database you just created.
+After you launch an instance, you can access it securely from your computer or from cloud shell. Let's open cloud shell and check your connection to your new PostgreSQL database you just created.
 
 ```
    ssh ubuntu@ip_address -i ~/.ssh/id_rsa
