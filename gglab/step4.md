@@ -4,13 +4,14 @@
 
 # Lab 4 - Explore Oracle Marketplace and create your Goldengate instances
 
-Now let's continue to create your Oracle Goldengate Instances using Marketplace. This lab consists of 2 main parts. 
+Now let's continue to create your Oracle Goldengate Instances using Marketplace. This lab consists of 2 parts. 
 
-As you can see in architecture diagram, we will have to create 2 Goldengate instances, one for [non-oracle](#Part-1) and second is for Oracle databases. We already created SOURCE in [Lab 2](/gglab/step2.md) and TARGET in [Lab 3](/gglab/step3.md).
+As you can see in architecture diagram, we will have to create 2 Goldengate instances, one for non-oracle and second is for Oracle databases. We have already created SOURCE in [Lab 2](/gglab/step2.md) and TARGET in [Lab 3](/gglab/step3.md).
 
 ![](/gglab/files/Architecture.png)
 
 ## What is Oracle Marketplace? 
+
 Oracle Cloud Marketplace is an online store—a one-stop shop—selling hundreds of business apps and professional services that complement your existing Oracle Cloud implementation. 
 
 All apps and services on the marketplace are offered by approved, registered, and expert partners and developers. Plus, Oracle has vetted, reviewed, and approved each product.
@@ -29,11 +30,13 @@ Go to left top hamburger icon and navigate to **_Marketplace_** then choose **_A
 
 As I mentioned, we will install Goldengate in VM instance, it is similar to Lab 2.
 
-#### Search "Goldengate" in search pane and choose **Oracle GoldenGate for Non-Oracle** option.
+#### Find correct product from Marketplace
+
+Search for "Goldengate" in search pane and choose **Oracle GoldenGate for Non-Oracle** option.
 
 ![](/gglab/files/ogg/pg_mp_1.png)
 
-#### Find PostgreSQL - Classic - Promotional offer from version's drop down list then choose correct compartment. 
+Find **PostgreSQL - Classic - Promotional** offer from version's drop down list then choose correct compartment to create in it. 
 
 Notice that Software price per OCPU is **BYOL**, meaning this is free until promotional period expires. *Please review and accept terms and conditions* then click on **Launch Stack**.
 
@@ -91,6 +94,7 @@ Once your resource is successfully created, you will see status change and turns
 ![](/gglab/files/ogg/pg_mp_11.png)
 
 #### Test your instance
+
 After you launch an instance, you can access it securely. Let's open **Cloud Shell** and test your connection to your new Goldengate instance you just created.
 
 `ssh ubuntu@ip_address -i ~/.ssh/id_rsa`
@@ -106,7 +110,9 @@ Nice thing of using terrraform is you can modify variables of your Resource Stac
 
 This is almost same as Part 1, but we will install Goldengate Microservices this time. Again navigate to **Marketplace** choose **Applications**
 
-#### Search "Goldengate" in search pane and choose **Oracle GoldenGate for Oracle** option.
+#### Find correct product from Marketplace
+
+Search for "Goldengate" in search pane and choose **Oracle GoldenGate for Oracle** option.
 
 ![](/gglab/files/ogg/micro_mp_1.png)
 
@@ -144,12 +150,15 @@ Most importantly, please tick **ASSIGN PUBLIC IP**, don't forget this step.
 
 #### Create OGG Deployments
 
-Goldengate Microservices usually needs 2 deployments, source and target. We will only choose **Oracle 11g** in first deployment and **Oracle 19c** in second deployment.
+Goldengate Microservices usually needs 2 deployments, source and target. We will choose **Oracle 11g** in deployment 1 and **Oracle 19c** in deployment 2. We are choosing these, becaue they are mandatory. But we will not use deployment 1.
 
-Then you need to tick **DEPLOYMENT 2 - AUTONOMOUS DATABASE**. This will ask you to choose correct compartment and name of **Autonomous Database Instance**, which you created in Lab 3. 
+Then you need to tick **DEPLOYMENT 2 - AUTONOMOUS DATABASE**. 
+
+This will ask you to choose correct compartment and name of **Autonomous Database Instance**, which you created in Lab 3. 
+
+We select this option, because the Autonomous Database wallets and credential files get imported automatically, which makes easier to connect to the Autonomous Database.
 
 ![](/gglab/files/ogg/micro_mp_7_2.png)
-
 
 #### Shell Access
 
@@ -178,6 +187,7 @@ Once your resource is successfully created, you will see status change and turns
 ![](/gglab/files/ogg/micro_mp_11.png)
 
 #### Test your instance
+
 After you launch an instance, you can access it securely. Let's open **Cloud Shell** and test your connection to your new Goldengate instance you just created.
 
 `ssh ubuntu@ip_address -i ~/.ssh/id_rsa`
@@ -186,8 +196,9 @@ Enter 'yes' when prompted for security message, and enter your passphrase.
 
 ![](/gglab/files/ogg/micro_mp_11.png)
 
-Then enter following commands to open firewall ports
+Then enter following command `sudo systemctl stop firewalld` to avoid any hassle
 
+OR we can open correct firewall ports using following commands:
 ```
 sudo firewall-cmd --zone=public --permanent --add-port=9011-9014/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=9021-9024/tcp
@@ -197,11 +208,9 @@ sudo firewall-cmd --zone=public --permanent --add-port=7809-7810/tcp
 sudo firewall-cmd --reload
 ```
 
-OR we can just stop firewall using `sudo systemctl stop firewalld` to avoid any hassle.
+#### Get OGGADMIN user's password
 
-#### OGGADMIN password
-
-Issue `cat ogg-credentials.json` command and copy credential output. 
+Issue `cat ogg-credentials.json` command and copy credential output in **Cloud Shell** terminal
 
 ![](/gglab/files/ogg/micro_login_2.png)
 
@@ -215,12 +224,12 @@ You will be prompted to enter username provide **OGGADMIN**. Password is output 
 
 ![](/gglab/files/ogg/micro_login.gif)
 
-Now we are ready to proceed to fun part.
-
 Before we going forward, let's just confirm everything we have:
  1. HOL_OGG_Microservie instance
  2. HOL_OGG_PG instance
  3. HOL_PostgreSQL instance
  4. HOL_ATP autonomous database
+ 
+Now we are ready to proceed to fun part.
  
 - [Go to last lab 5](/gglab/step5.md)
