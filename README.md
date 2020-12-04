@@ -1,6 +1,9 @@
 # Migrate your PostgreSQL to Oracle Database Cloud Service using Goldengate 
 
-sample description
+Welcome to migration to ATP using Oracle Goldengate lab material. 
+
+![](/gglab/files/Architecture.png)
+
 
 ## Pre-Requisites: Oracle Cloud Account
 - First of all, you need an Oracle Cloud account. Sign up [here](https://oracle.com/free) to create a free-tier account. 
@@ -19,6 +22,6 @@ Once you are successfully created your cloud account, you will receive a confirm
 
 - **LAB 1:** [Create your Compartment and VCN](/gglab/step1.md)
 - **LAB 2:** [Create your PostgreSQL database](/gglab/step2.md)
-- **LAB 3:** [Provision your first DBCS in OCI](/gglab/step3.md)
-- **LAB 4:** [Create your Goldengate instance](/gglab/step4.md)
+- **LAB 3:** [Provision your first ATP in OCI](/gglab/step3.md)
+- **LAB 4:** [Create your Goldengate instances](/gglab/step4.md)
 - **LAB 5:** [Configure your migration](/gglab/step5.md)
