@@ -58,34 +58,34 @@ Click on *Edit* as shown below
 
 #### Choose your Availability Domain (AD aka available datacentre)
 
-Some may see just one AD depending on regions, however in my case I can see three AD because my region Germany Frankfurt has 3 AD's. 
+Some may see just one AD depending on regions, however in my case I can see three ADs because my region Germany Frankfurt has 3 ADs.
 
-We will stick to *Always free Eligibile* AD and click on "Change Image"
+We will stick to *Always free Eligibile* AD2 for example and click on "Change Image"
 
 ![](./files/pgsql/pg_2_1.png)
 
 #### Go to Platform Images tab
 
-Choose "Canonical Ubuntu 20.04 *Always Free Eligible"* OS image for this occasion and click on select image.
+Choose "Canonical Ubuntu 20.04 *Always Free Eligible"* OS image for this occasion and click on select image. I advise you to choose latest available.
 
 ![](./files/pgsql/pg_2_2.png)
 
 #### Choose your shape 
 
 There are 2 options for choosing your image:
-   - Always Free Eligible E2.1.Micro shape, this doesn't charge you anything at all, free for life.
+   - Always Free Eligible E2.1.Micro shape, this doesn't charge you anything at all, free for life but little slower than other shapes.
    - Other shapes with higher CPUs, higher memory and higher network bandwidth, costs vary depending on your need.
 
 If you wish to continue with *Always Free* shape don't change shape here.
 ![](./files/pgsql/pg_3.png)
 
-#### [Change shape]
-When you clicked on change shape, you will see Virtual Machine options by default. Click on *Specialty and Legacy* tab to list available shapes for your tenancy.
+#### Change shape
+When you clicked on change shape, you will see **Virtual Machine** options by default. Click on **_Specialty and Legacy_** tab to list all available shapes for your tenancy.
 
 ![](./files/pgsql/pg_3_1.png)
 
 
-I choose VM.Standard.E2.1 AMD shape for PostgreSQL DB, since this is for just small demo.
+I choose **VM.Standard.E2.1** AMD shape for PostgreSQL DB, since this is for just small demo.
 
 
 ![](./files/pgsql/pg_3_2.png)
@@ -94,11 +94,12 @@ Confirm your selection and go to next configuration.
 
 
 #### Select VCN
-Under Configure Networking, you will see OCI has selected automatically from your available networking options. Make sure **Public Subnet** is selected and **Assign a Public IP** option is set to **Yes** here. If they are not, click on *Edit*
+Under Configure Networking, you will see OCI has selected automatically from your available networking options. 
+Make sure **Public Subnet** is selected and **Assign a Public IP** option is set to **Yes** here. If they are not, click on *Edit*
 
 ![](./files/pgsql/pg_4.png)
 
-Select correct compartment then choose correct VCN you created in Lab 1. Remember to choose public subnet and assign public IP address.
+Select correct compartment then choose correct VCN you created in [Lab 1](/gglab/step1.md). Remember to choose **public subnet** and **assign public IP address** in this configuration step.
 
 ![](./files/pgsql/pg_4_1.png)
 
@@ -114,11 +115,11 @@ We are almost done here, but we haven't configured anything about PostgreSQL dat
 
 ![](./files/pgsql/pg_6_1.png)
 
-You can download pre-created cloud-init file from **[here](./files/pgsql/ubuntu_ParkingData.sh)**. Download and save it as ubuntu_ParkingData.sh
+You can download pre-created cloud-init file from **[here](./files/pgsql/ubuntu_ParkingData.sh)**. Download and save it as ubuntu_ParkingData.sh, How? Open the link in new tab, then choose "Raw" button and then "ctrl + s". Make sure to save these with correct extension **.sh** not txt!
 
 #### Upload cloud-init file
 
-Go to *Mangement tab* and choose cloud init script file and upload downloaded file to install postgresql database during your VM instance creation. 
+Go to *Mangement tab* and **Choose cloud-init script file** and upload downloaded ubuntu_ParkingData.sh file, which will install postgresql database during your linux instance creation. 
 
 ![](./files/pgsql/pg_6_2.png)
 
@@ -128,7 +129,7 @@ Review everything and click on "Create" button.
 
 ![](./files/pgsql/pg_7.png)
 
-*NOTICE: Just in case if you are on running this lab on trial account you might see **Out of capacity for Shape MICRO** warning, it means selected shape has reached to max available limit for your trial usage. I'd advise you to try changing shape to **VM.Standard.E2.1** on step (#change-shape).
+_NOTICE: Just in case if you are on running this lab on trial account you might see **Out of capacity for Shape MICRO** warning, it means selected shape has reached to max available limit for your trial usage. I'd advise you to try changing shape to **VM.Standard.E2.1** on step [Change shape](#change-shape)_
 
 ![](./files/pgsql/pg_7_1.png)
 
@@ -152,7 +153,7 @@ Enter 'yes' when prompted for security message, and enter your passphrase.
 
 ![](./files/pgsql/pg_9.png)
 
-Ready.
+Ubuntu instance is ready, let's continue.
 
 ## Part 3. Login to your PostgreSQLDB instance
 
@@ -163,7 +164,7 @@ If you are seeing something like this, you are most likely good to go to next la
 
 ![](./files/pgsql/pg_10_1.png)
 
-Just in case, we will switch to **postgres** user in ubuntu:
+Just in case, let's make sure you have sample data is installed. We will switch to **postgres** user in ubuntu, issue:
 `
 sudo -i -u postgres
 `
