@@ -183,4 +183,4 @@ It should show you a 10000 records.
 
 Let's proceed to next lab.
 
-- [Go back to next step](/gglab/step3.md)
+- [Go to next lab 3](/gglab/step3.md)
