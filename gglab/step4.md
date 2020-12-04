@@ -194,9 +194,9 @@ After you launch an instance, you can access it securely. Let's open **Cloud She
 
 Enter 'yes' when prompted for security message, and enter your passphrase.
 
-![](/gglab/files/ogg/micro_mp_11.png)
-
 Then enter following command `sudo systemctl stop firewalld` to avoid any hassle
+
+![](/gglab/files/ogg/micro_login_2.png)
 
 OR we can open correct firewall ports using following commands:
 ```
@@ -210,11 +210,7 @@ sudo firewall-cmd --reload
 
 #### Get OGGADMIN user's password
 
-Issue `cat ogg-credentials.json` command and copy credential output in **Cloud Shell** terminal
-
-![](/gglab/files/ogg/micro_login_2.png)
-
-#### Now let's login to microservices
+Issue `cat ogg-credentials.json` command and copy credential output in **Cloud Shell** terminal. Now let's login to microservices.
 
 Open your browser and issue `https://ip_address` hit enter, it will prompt SSL certificate, we know it's okay so accept and continue.
 
