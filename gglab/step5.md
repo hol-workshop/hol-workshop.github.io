@@ -1,18 +1,24 @@
 - [Go back to main](/README.md)
 - [Go back to previous step](/gglab/step4.md)
 
-!!!GIF file here!!!
-
-## PART 1: Preparing the database for Oracle Goldengate
+## LAB 5. Configure your Migration
 
 With Oracle GoldenGate for PosgreSQL, you can perform initial loads and capture transactional data from supported PostgreSQL versions and replicate the data to a PostgreSQL database or other supported Oracle GoldenGate targets, such as an Oracle Database. We have created and pre-loaded some test data into our test Postgresql database in Lab 2. 
 
-Now in this part we will configure our connection to Postgresql database using ODBC driver then we will capture transactional data also it known as extract process. 
+Now in part 1 we will configure our connection to Postgresql database using ODBC driver then we will start capturing transactional data from PostgreSQL, this process is also known as extract process. 
 
-We will need 3 extract processes:
-  - An extract for changed data capture
-  - An extract for sending those capture to GG Microservices
-  - An Initial-Load extract ... explanation here
+As you can see below, we will need 3 extract processes:
+  - An extract for changed data capture. Exttab process will start capturing changes and this will create some files called trails.
+  - An extract for sending those capture to GG Microservices. Extdmp will be pumping trail files.
+  - An Initial-Load extract. While changes are being captured, migration step needs special type of extract and replicat process, this is is cold data. Usually after initial load finishes, we start applying changed data while initial load happens.
+  
+
+![](/gglab/files/ggconf/general.gif)
+
+
+In this lab scope we will configure all of these 3 processes, however we will not simulate real-time migration step. After this lab, you will successfully migrate static data and in bonus lab we will see how to apply changed data while initial load was being applied at target.
+
+### PART 1: Preparing the database for Oracle Goldengate
 
 This part describes the tasks for configuring and running Oracle GoldenGate for PostgreSQL and [I used official oracle documentation for this lab](https://docs.oracle.com/en/middleware/goldengate/core/19.1/gghdb/preparing-system-oracle-goldengate3.html)
 
@@ -104,7 +110,7 @@ You should be able to see belov information saying *Successfully Logged into dat
 
 You should be able to see above information.
 
-## PART 2: Adding replications
+### PART 2: Adding replications
 
 Now you are logged into database in GGSCI console, which means you are ready to proceed. We will create three extract processes and we have five tables in source database.
 
@@ -249,7 +255,7 @@ You can see more information about extract process with `view report init`, it i
 ![](/gglab/files/ggconf/gg_pg_initload_report.png)
 
 
-## PART 3: Applying changes at Target database using Microservices
+### PART 3: Applying changes at Target database using Microservices
 
 This is last part of this HOL. I am glad that we are here. Now we have few configuration steps to do in GG Microservices server, open your browser and point to `https://your_microservices_ip_address`. Provide **oggadmin** credentials, then log in.
 
