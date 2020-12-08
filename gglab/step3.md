@@ -3,27 +3,66 @@
 
 # Lab 3 - Create your target Autonomous Database
 
-### What deployment options are available for Autonomous Database?
+#### What deployment options are available for Autonomous Database?
 
-There are two options for deploying an autonomous database.
+There are 2 options for deploying an autonomous database.
 - Serverless deployment. In serverless deployment, multiple users share the same cloud infrastructure resources. Serverless deployment is the simplest option; it requires no minimum commitment and users can take advantage of quick data provisioning and application development. Users also enjoy independent compute and storage scalability. In this deployment model, users are responsible for database provisioning and management while the provider takes care of infrastructure deployment and management responsibilities.
 - Dedicated deployment. Dedicated deployment allows the user to provision the autonomous database within a dedicated (unshared) cloud infrastructure. This deployment model has no shared processor, memory, network, or storage resources. Dedicated deployment offers greater control and customization over the entire environment and is ideal for users who want to tailor their autonomous database to meet specific organizational needs. Additionally, dedicated deployment allows for an easy transition from on-premise databases to a fully autonomous and isolated private database cloud.
-### What type of workloads can your run in an Autonomous Database?
 
-An autonomous database consists of two key elements that align with workload types.
+#### What type of workloads can your run in an Autonomous Database?
+
+An autonomous database consists of three key elements that align with workload types.
 - Data warehouse performs numerous functions related to business intelligence activities, and uses data that’s been prepared in advance for analysis. The data warehouse environment also manages all database lifecycle operations, can perform query scans on millions of rows, is scalable to business needs, and can be deployed in a matter of seconds.
+
 - Transaction processing enables time-based transactional processes such as real-time analytics, personalization, and fraud detection. Transaction processing typically involves a very small number of records, is based on predefined operations, and allows for simple application development and deployment.
 
-Login to the Oracle Cloud, as shown in the previous lab.
+- JSON Database ... explanation 
 
-Once you are logged in, you are taken to the cloud services dashboard where you can see all the services available to you. Click the navigation menu in the upper left to show top level navigation choices.
 
-Note: You can also directly access your Autonomous Data Warehouse or Autonomous Transaction Processing service in the Quick Actions section of the dashboard.
+Let's continue from the previous lab. Go to top left hamburger icon, navigate to **Autonomous Transaction Processing** then choose ...
 
+![](./files/atp/autonomous_0.png)
 
 Click Create Autonomous Database to start the instance creation process.
 
-Click Create Autonomous Database.
+![](./files/atp/autonomous_1.png)
+
+![](./files/atp/autonomous_2.png)
+
+#### option to choose... Always free or NOT
+![](./files/atp/autonomous_3_1.png)
+![](./files/atp/autonomous_3_2.png)
+
+#### Admin password
+![](./files/atp/autonomous_4.png)
+
+#### Network Access and License
+![](./files/atp/autonomous_5.png)
+
+#### creation process
+![](./files/atp/autonomous_6.png)
+
+#### created ...
+![](./files/atp/autonomous_7.png)
+
+#### SQL developer web 
+
+![](./files/atp/sql_dev_0.png)
+
+login using ADMIN ...
+
+![](./files/atp/sql_dev_1.png)
+
+
+#### Create tables sql file
+drag and drop to worksheet and execute
+
+![](./files/atp/sql_dev_2.png)
+
+#### Enable GGADMIN 
+
+![](./files/atp/sql_dev_3.png)
+
 
 This brings up the Create Autonomous Database screen where you will specify the configuration of the instance.
 
@@ -92,3 +131,5 @@ Click Create Autonomous Database.
 Click Create Autonomous Database.
 
 Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+
+- [Go to next lab 4](/gglab/step4.md)
