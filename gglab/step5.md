@@ -49,7 +49,7 @@ Extract also connects to the source PostgreSQL database using the libpq native l
 Create odbc.ini file in ogg installation location, issue:
 `vi /home/opc/postgresql/odbc.ini` to create odbc.ini file, because it doesn't exist before. 
 
-_**NOTE:** Editing uses **vi** editor, if you never used it before here is little instruction. When you issue **vi some_file_name** it will either open if that some_file_name exists or create a new file called some_file_name. You have to press **i** for editing the file, then if you are done press **:wq** for save & quit._
+_**NOTE:** Editing uses **vi** editor, if you never used it before here is little instruction. When you issue **vi some_file_name** it will either open if that some_file_name exists or create a new file called some_file_name. You have to press **i** for editing the file, then if you are done press **:wq** then **hit enter** for save & quit._
 
 Add  following example to odbc.ini file, but make sure you add ** Hostname parameter with your Postgresql database IP Address:
 ```
@@ -75,26 +75,30 @@ Password=postgres
 
 Oracle GoldenGate Classic for Non-Oracle (PostgreSQL) allows you to quickly access the GoldenGate Service Command Interface (GGCSI) and is preconfigured with a running Manager process. After logging in to the compute node
 
-To start GGSCI, execute the following command:
+To start GGSCI, execute the following commands separately:
 
 ```
 export ODBCINI=/home/opc/postgresql/odbc.ini
+
 cd /usr/local/bin/
+
 ./ggsci
 ```
 
 ![](/gglab/files/ggconf/gg_pg_config_2.gif)
 
-
-
 #### CREATE SUBDIRS
 
-Use `CREATE SUBDIRS` when installing Oracle GoldenGate. This command creates the default directories within the Oracle GoldenGate home directory. Use CREATE SUBDIRS before any other configuration tasks.
+We need to create our work directories in GoldenGate before we start working. Command creates the default directories within the Oracle GoldenGate home directory. Once your in GGSCI console, issue `CREATE SUBDIRS` command to create your directories.
 
 #### Goldengate Manager
 
-Once you are in GGSCI, we need to set Goldengate Manager port, issue `EDIT PARAMS MGR` and enter `PORT 7809`. After that start goldengate manager process by issueing `START MGR`
-You can check if manager status by issueing `INFO MGR`.
+After sub directories, we need to set Goldengate Manager's port, issue `EDIT PARAMS MGR` and enter `PORT 7809` then save.
+
+_**NOTE:** Editing uses **vi** editor, you have to  press **:wq** then **hit enter** for save & quit._
+
+
+Then start goldengate manager process by issueing `START MGR`. You can check if manager status by issueing `INFO MGR`.
 
 ![](/gglab/files/ggconf/gg_pg_config_3.gif)
 
@@ -131,11 +135,12 @@ add trandata public."PaymentData"
 #### Registering a Replication Slot
 
 Oracle GoldenGate needs to register the extract with the database replication slot, before adding extract process in Goldengate. 
-_Ensure to have the DBLOGIN connected to the source database._
+_Ensure that you are connected to SourceDB using the DBLOGIN command._
 
-We will register each of these three extracts in next 3 steps.
+We will issue register command in each of these extracts steps.
 
 #### Exttar
+
 Let's begin to create the first extract process, which is continuous replication in usual migration and replication project scenario.
 
 First register your extract `register extract exttar`. Then edit extract configuration with `edit params exttar`. 
@@ -153,7 +158,7 @@ TABLE public."ParkingData";
 ```
 and save!
 
-_**NOTE**:Editing uses **vi** editor, so you should enter **i** for insert then **:wq** for save & quit._
+_**NOTE**:Editing uses **vi** editor, so you have to press **i** for editing the file, when you are done press **:wq** then **hit enter** for save & quit._
 
 After that add your extract using below commands:
 
@@ -174,7 +179,7 @@ This process is capturing change data from your source database. As I said earli
 
 Now changes are being captured from source database and we need to send that to GG microservices, in order to apply at target database. Therefore we need another process, which acts as extract but sends existing trail files to GG microservices.
 
-First register your extract `register extract extdmp`. Then edit extract configuration with `edit params extdmp`, same as previous step.
+First register your extract `register extract extdmp`. Then edit extract configuration with `edit params extdmp`, similar to previous step.
 
 Insert below as your extdmp parameter, but **make sure** you change ip_address with your GG Microservice's IP Address!
 
@@ -189,8 +194,8 @@ TABLE public."Parkings";
 TABLE public."PaymentData";
 TABLE public."ParkingData";
 ```
-and save! 
 
+_**NOTE**:Editing uses **vi** editor, so you have to press **i** for editing the file, when you are done press **:wq** then **hit enter** for save & quit._
 
 After that add your extract using below commands
 
@@ -199,7 +204,7 @@ add extract extdmp, exttrailsource ./dirdat/pd
 add rmttrail pd, extract extdmp, megabytes 50
 ```
 
-Confirm everything is correct then start this extract by issueing `start extdmp` command.
+Confirm everything is correct then start this extract by issueing `start extdmp` command, similar to previous step.
 
 ![](/gglab/files/ggconf/gg_pg_extdmp.png)
 
@@ -237,6 +242,7 @@ TABLE public."PaymentData";
 TABLE public."ParkingData";
 ```
 
+_**NOTE**:Editing uses **vi** editor, so you have to press **i** for editing the file, when you are done press **:wq** then **hit enter** for save & quit._
 After that add your initial load process:
 
 ```
@@ -244,7 +250,6 @@ add extract init, sourceistable
 ```
 
 Confirm everything is correct then start this extract by issueing `start init` command. You can see status of this special type of extract process with `info init`. 
-
 
 ![](/gglab/files/ggconf/gg_pg_initload.png)
 
@@ -331,7 +336,7 @@ Microservices has created some draft parameter file for your convenience, let's 
 ![](/gglab/files/ggconf/micro_initload_3_1.png)
 
 
-Erase exisiting and paste below configuration 
+Erase existing and paste below configuration 
 
 ```
 replicat initload
