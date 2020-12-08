@@ -207,8 +207,10 @@ Then click on Target Receiver server port 9023, it will redirect you to new tab,
 
 You should be seeing something like this, what it means that your extdmp is pumping some trail files to your Microservices.
 
-![](/gglab/files/ggconf/gg_oggadmin_1.png)
 
+![](/gglab/files/ggconf/gg_oggadmin_1.png)
+ 
+ 
 #### Initload
 
 Now database changes are being transferred to GG Microservices, it is time to do our initial load... explanation
@@ -228,50 +230,70 @@ TABLE public."Parkings";
 TABLE public."PaymentData";
 TABLE public."ParkingData";
 ```
+
 After that add your initial load process:
+
 ```
 add extract init, sourceistable
 ```
 
 Confirm everything is correct then start this extract by issueing `start init` command. You can see status of this special type of extract process with `info init`. 
 
+
 ![](/gglab/files/ggconf/gg_pg_initload.png)
+
 
 You can see more information about extract process with `view report init`, it is good wayt to investigate your goldengate process result. I can see some good statistics at the end of this report
 
+
 ![](/gglab/files/ggconf/gg_pg_initload_report.png)
+
 
 ## PART 3: Applying changes at Target database using Microservices
 
 This is last part of this HOL. I am glad that we are here. Now we have few configuration steps to do in GG Microservices server, open your browser and point to `https://your_microservices_ip_address`. Provide **oggadmin** credentials, then log in.
 
+
 ![](/gglab/files/ggconf/gg_oggadmin.png)
+
 
 Then click on Target Receiver server port 9021, it will redirect you to new tab, provide your credentials again for username **oggadmin**.
 
+
 ![](/gglab/files/ggconf/micro_oggadmin_0.png)
+
 
 #### Add Credentials
 
 You should be seeing empty Extracts and Replicats dashboard. Let's add some Autonomous Database credentials at first. Open hamburger menu on left top corner, choose **Configuration**
 
+
 ![](/gglab/files/ggconf/micro_ggadmin_0.png)
+
 
 It will open Oggadmin Security and you will see we already have a connection to ATP database, because chosen during our installation in Lab 4. However, you still need to add password here. Click on a pencil icon to alter credentials.
 
+
 ![](/gglab/files/ggconf/micro_ggadmin_1.png)
+
 
 Provide password ` GG##lab12345 ` and verify it. This is your ggadmin password, which we provided in lab 3. **NOTE: if you used different password, please use that password**
 
+
 ![](/gglab/files/ggconf/micro_ggadmin_2.png)
+
 
 After that click on **Log in** database icon.
 
+
 ![](/gglab/files/ggconf/micro_ggadmin_3.png)
+
 
 Scroll to **Checkpoint** part and click on **+** icon, then provide `ggadmin.chkpt` and **SUBMIT**. Checkpoint tables contain the data necessary for tracking the progress of the Replicat as it applies transactions to the target system. Regardless of the Replicat that is being used, it is a best practice to enable the checkpoint table for the target system.
 
+
 ![](/gglab/files/ggconf/micro_ggadmin_4.png)
+
 
 Now let's go back to **Overview** page from here.
 
@@ -279,21 +301,29 @@ Now let's go back to **Overview** page from here.
 
 The apply process for replication, also known as Replicat, is very easy and simple to configure. There are five types of Replicats supported by the Oracle GoldenGate Microservices. In overview page, go to Replicat part and click on **+** to create our replicat process.
 
+
 ![](/gglab/files/ggconf/micro_initload_0.png)
+
 
 We will choose **Nonintegrated Replicat** for initial load, click **Next**. In non-integrated mode, the Replicat process uses standard SQL to apply data directly to the target tables. In our case, number of records in source database is small and we don't need to run in parallel apply, therefore it will suffice.
 
+
 ![](/gglab/files/ggconf/micro_initload_1.png)
+
 
 Provide your name for replicat process then click on **Credentials Domain** drop-down list. There is only one at the moment, choose available option for you then **Credential Alias** would be your **hol_tp**, which is our pre-created connection group to ATP. After that go below to find **Trail Name** and edit to **il**. We defined this in our initload parameter, so it cannot be just random name. Also provide **Trail Subdirectory** as **/u02/trails** and choose **Checkpoint Table** from drop-down list.
 
 Review everything then click **Next**
 
+
 ![](/gglab/files/ggconf/micro_initload_2.png)
+
 
 Microservices has created some draft parameter file for your convenience, let's edit to our need.
 
+
 ![](/gglab/files/ggconf/micro_initload_3_1.png)
+
 
 Erase exisiting and paste below configuration 
 
@@ -309,11 +339,20 @@ MAP public."PaymentData", TARGET admin.PaymentData;
 
 ![](/gglab/files/ggconf/micro_initload_3_2.png)
 
+
 I hope everything is correct until this stage. Click **Create and Run** to start our replicat.
+
 
 ![](/gglab/files/ggconf/micro_initload_4.png)
 
-You can see details of running replicat process. In statistics tab, you'd see some changes right away.
+
+In overview dashboard, now you should be seeing successful running INITLOAD replication. Click on **Action** button choose **Details**.
+
+
+![](/gglab/files/ggconf/micro_initload.png)
+
+
+You can see details of running replicat process. In statistics tab, you'd see some changes right away. Because this is Initial load you will not see any update there, but in continuous replication case we see totally different numbers.
 
 ![](/gglab/files/ggconf/micro_initload_5.png)
 
