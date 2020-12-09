@@ -1,4 +1,4 @@
-- [Go back to main](/)
+- [Go back to main](README.md)
 - [Go back to previous step](step2.md)
 
 # Lab 3 - Create your target Autonomous Database
