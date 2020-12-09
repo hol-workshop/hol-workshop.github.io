@@ -24,9 +24,12 @@ Let's continue from the previous lab. Go to top left hamburger icon, navigate to
 
 ![](./files/atp/autonomous_0.png)
 
+#### Create ATP
 Configuration page will open, confirm your compartment once again. Then give a name for deployment **HOL_ATP** and give a database name **HOL**
 
 ![](./files/atp/autonomous_1.png)
+
+#### Workload type
 
 We will choose **Transaction Processing** workload type and will use **Shared Infrastructure**.
 
@@ -60,14 +63,17 @@ Your instance will begin provisioning. In a few minutes, the state will turn fro
 
 ![](./files/atp/autonomous_6.png)
 
-#### created ...
+#### Created
+It takes only 2-5 minutes to create fully working highly available, self running Autonomous database.
+
 ![](./files/atp/autonomous_7.png)
 
 ## PART 2
+This part will run create target tables for GG migration and enable GG replication in Autonomous database.
 
 #### SQL developer web 
 
-The Tools tab, which provides you access to SQL Developer Web and other web tools. Click **Open SQL Developer Web**, you may need to enable pop-up your browser if it doesn't open anything.
+In **Tools** tab, where you can access to SQL Developer Web and other web tools. Click **Open SQL Developer Web**, you may need to enable pop-up your browser if it doesn't open anything.
 
 ![](./files/atp/sql_dev_0.png)
 
