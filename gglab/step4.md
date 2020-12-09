@@ -16,7 +16,7 @@ Oracle Cloud Marketplace is an online store—a one-stop shop—selling hundreds
 
 All apps and services on the marketplace are offered by approved, registered, and expert partners and developers. Plus, Oracle has vetted, reviewed, and approved each product.
 Oracle Cloud Marketplace offers a vast collection of trusted and innovative apps in many business categories, including migration solutions like Goldengate. 
-[Source](/https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/appst/whats-oracle-cloud-marketplace.html#GUID-BC48BE32-949F-4B3B-8EDE-FE59F423FCDF)
+[Marketplace information source](https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/appst/whats-oracle-cloud-marketplace.html#GUID-BC48BE32-949F-4B3B-8EDE-FE59F423FCDF)
 
 #### Let's explore Oracle Marketplace in OCI
 
