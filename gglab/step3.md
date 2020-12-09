@@ -1,5 +1,5 @@
-- [Go back to main](/README.md)
-- [Go back to previous step](/gglab/step2.md)
+- [Go back to main](./README.md)
+- [Go back to previous step](step2.md)
 
 # Lab 3 - Create your target Autonomous Database
 
@@ -107,4 +107,4 @@ Run `alter system set enable_goldengate_replication = true scope=both;`
 
 We successfully provisioned our Autonomous Database and run necessary pre-requisite steps for later stages.
 
-- [Go to next lab 4](/gglab/step4.md)
+- [Go to next lab 4](step4.md)
