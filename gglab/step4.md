@@ -1,5 +1,5 @@
 
-- [Go back to main](/)
+- [Go back to main](README.md)
 - [Go back to previous step](step3.md)
 
 # Lab 4 - Explore Oracle Marketplace and create your Goldengate instances
