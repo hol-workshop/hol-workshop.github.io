@@ -1,5 +1,5 @@
-- [Go back to main](/README.md)
-- [Go back to previous step](/gglab/step1.md)
+- [Go back to main](README.md)
+- [Go back to previous step](step1.md)
 
 # Lab 2
 Now let's continue to create your source PostgreSQL database in Oracle Cloud Infrastructure. In order to do so, we would have to create a Compute resource with Ubuntu OS 20.4 version. This lab 2 consists of three small parts.
@@ -115,7 +115,7 @@ We are almost done here, but we haven't configured anything about PostgreSQL dat
 
 ![](./files/pgsql/pg_6_1.png)
 
-You can download pre-created cloud-init file from **[here](./files/pgsql/ubuntu_ParkingData.sh)**. Download and save it as ubuntu_ParkingData.sh, How? Open the link in new tab, then choose "Raw" button and then "ctrl + s". Make sure to save these with correct extension **.sh** not txt!
+You need to download cloud-init file **[from here](./files/pgsql/ubuntu_ParkingData.sh)**. Make sure to save these with correct extension **.sh** not txt!
 
 #### Upload cloud-init file
 
@@ -183,4 +183,4 @@ It should show you a 10000 records.
 
 Let's proceed to next lab.
 
-- [Go to next lab 3](/gglab/step3.md)
+- [Go to next lab 3](step3.md)

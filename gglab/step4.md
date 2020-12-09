@@ -1,12 +1,12 @@
 
-- [Go back to main](/README.md)
-- [Go back to previous step](/gglab/step3.md)
+- [Go back to main](README.md)
+- [Go back to previous step](step3.md)
 
 # Lab 4 - Explore Oracle Marketplace and create your Goldengate instances
 
 Now let's continue to create your Oracle Goldengate Instances using Marketplace. This lab consists of 2 parts. 
 
-As you can see in architecture diagram, we will have to create 2 Goldengate instances, one for non-oracle and second is for Oracle databases. We have already created SOURCE in [Lab 2](/gglab/step2.md) and TARGET in [Lab 3](/gglab/step3.md).
+As you can see in architecture diagram, we will have to create 2 Goldengate instances, one for non-oracle and second is for Oracle databases. We have already created SOURCE in [Lab 2](step2.md) and TARGET in [Lab 3](step3.md).
 
 ![](/gglab/files/Architecture.png)
 
@@ -16,7 +16,7 @@ Oracle Cloud Marketplace is an online store—a one-stop shop—selling hundreds
 
 All apps and services on the marketplace are offered by approved, registered, and expert partners and developers. Plus, Oracle has vetted, reviewed, and approved each product.
 Oracle Cloud Marketplace offers a vast collection of trusted and innovative apps in many business categories, including migration solutions like Goldengate. 
-[Source](/https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/appst/whats-oracle-cloud-marketplace.html#GUID-BC48BE32-949F-4B3B-8EDE-FE59F423FCDF)
+[Marketplace information source](https://docs.oracle.com/en/cloud/marketplace/marketplace-cloud/appst/whats-oracle-cloud-marketplace.html#GUID-BC48BE32-949F-4B3B-8EDE-FE59F423FCDF)
 
 #### Let's explore Oracle Marketplace in OCI
 
@@ -228,4 +228,4 @@ Before we going forward, let's just confirm everything we have:
  
 Now we are ready to proceed to fun part.
  
-- [Go to last lab 5](/gglab/step5.md)
+- [Go to last lab 5](step5.md)

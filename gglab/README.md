@@ -2,7 +2,7 @@
 
 Welcome to migration to ATP using Oracle Goldengate lab material. 
 
-![image](/gglab/files/Architecture.png)
+![image](files/Architecture.png)
 
 
 ## Pre-Requisites: Oracle Cloud Account
@@ -20,11 +20,12 @@ Once you are successfully created your cloud account, you will receive a confirm
 
 ### Lab steps
 
-- **LAB 1:** [Create your Compartment and VCN](gglab/step1.md)
-- **LAB 2:** [Create your PostgreSQL database](gglab/step2.md)
-- **LAB 3:** [Provision your first ATP in OCI](gglab/step3.md)
-- **LAB 4:** [Create your Goldengate instances](gglab/step4.md)
-- **LAB 5:** [Configure your migration](gglab/step5.md)
+- **LAB 1:** [Create your Compartment and VCN](step1.md)
+- **LAB 2:** [Create your PostgreSQL database](step2.md)
+- **LAB 3:** [Provision your first ATP in OCI](step3.md)
+- **LAB 4:** [Create your Goldengate instances](step4.md)
+- **LAB 5:** [Configure your migration](step5.md)
+
 
 
 

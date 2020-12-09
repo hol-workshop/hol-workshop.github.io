@@ -1,5 +1,5 @@
-- [Go back to main](/README.md)
-- [Go back to previous step](/gglab/step2.md)
+- [Go back to main](README.md)
+- [Go back to previous step](step2.md)
 
 # Lab 3 - Create your target Autonomous Database
 
@@ -18,118 +18,93 @@ An autonomous database consists of three key elements that align with workload t
 
 - JSON Database ... explanation 
 
+## PART 1: Create your Autonomous Database
 
-Let's continue from the previous lab. Go to top left hamburger icon, navigate to **Autonomous Transaction Processing** then choose ...
+Let's continue from the previous lab. Go to top left hamburger icon, navigate to **Autonomous Transaction Processing**, then choose your compartment from left pane and click on **Create Autonomous Database** button.
 
 ![](./files/atp/autonomous_0.png)
 
-Click Create Autonomous Database to start the instance creation process.
+#### Create ATP
+Configuration page will open, confirm your compartment once again. Then give a name for deployment **HOL_ATP** and give a database name **HOL**
 
 ![](./files/atp/autonomous_1.png)
 
+#### Workload type
+
+We will choose **Transaction Processing** workload type and will use **Shared Infrastructure**.
+
 ![](./files/atp/autonomous_2.png)
 
-#### option to choose... Always free or NOT
+#### Option 1: Always free
+Here, if you'd like to create your ATP as **Always Free**, which is free forever but with limited CPU and storage capacity. Just click on this toggle. **Note: You cannot scale up or down Always Free resource after creation**
+
 ![](./files/atp/autonomous_3_1.png)
+
+#### Option 2: Non-Limited
+If you want more power and able to be scale up/down your resource at later stage, choose to disable Always free. For this lab, keep auto scaling disabled and you can change this anytime.
+Number of **OCPU** count for your ATP, let's specify just 1 and **Storage** 1 TB also, we can change this anytime after instance creation.
+
 ![](./files/atp/autonomous_3_2.png)
 
 #### Admin password
+Provide your ADMIN account credentials here, for example **GG##lab12345** will suffice password requirement.
+
 ![](./files/atp/autonomous_4.png)
 
 #### Network Access and License
+We will accept the default option for network access, "Allow secure access from everywhere". For license type, select **License Included**, because we want to subscribe to new database software licenses and the database cloud service.
+
 ![](./files/atp/autonomous_5.png)
 
-#### creation process
+Review everything and click on **Create Autonomous Database**.
+
+#### Provisioning
+Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
+
 ![](./files/atp/autonomous_6.png)
 
-#### created ...
+#### Created
+It takes only 2-5 minutes to create fully working highly available, self running Autonomous database.
+
 ![](./files/atp/autonomous_7.png)
+
+## PART 2
+This part will run create target tables for GG migration and enable GG replication in Autonomous database.
 
 #### SQL developer web 
 
+In **Tools** tab, where you can access to SQL Developer Web and other web tools. Click **Open SQL Developer Web**, you may need to enable pop-up your browser if it doesn't open anything.
+
 ![](./files/atp/sql_dev_0.png)
 
-login using ADMIN ...
+A new sign-in page opens, enter **ADMIN** in Username and enter your password.
 
 ![](./files/atp/sql_dev_1.png)
 
+#### Create target tables
 
-#### Create tables sql file
-drag and drop to worksheet and execute
+When you open the SQL Developer Web for first time, a series of pop-up informational boxes introduce you to the main features. Take a quick look at them. 
+
+
+Let's create our target tables for migration. Please download target table creation script **[from here](./files/atp/CreateTables.sql)**. Make sure to save these with correct extension .sql not txt!
+
+SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded CreateTables.sql and drop in the worksheet area. Then run create statements.
 
 ![](./files/atp/sql_dev_2.png)
 
 #### Enable GGADMIN 
 
+Now let's unlock and change the password for the pre-created Oracle GoldenGate user (ggadmin) in Autonomous Database.
+Run `alter user ggadmin identified by "GG##lab12345" account unlock;`
+
 ![](./files/atp/sql_dev_3.png)
 
+Let's just check whether the parameter enable_goldengate_replicaton is set to true, for some case it maybe set to false.
 
-This brings up the Create Autonomous Database screen where you will specify the configuration of the instance.
+Run `alter system set enable_goldengate_replication = true scope=both;`
 
-Provide basic information for the autonomous database:
+![](./files/atp/sql_dev_4.png)
 
-    Choose a compartment - Select a compartment for the database from the drop-down list.
-    Display Name - Enter a memorable name for the database for display purposes. For this lab, use ADW Finance Mart.
-    Database Name - Use letters and numbers only, starting with a letter. Maximum length is 14 characters. (Underscores not initially supported.) For this lab, use ADWFINANCE.
+We successfully provisioned our Autonomous Database and run necessary pre-requisite steps for later stages.
 
-Enter the required details.
-
-Choose a workload type. Select the workload type for your database from the choices:
-
-    Data Warehouse - For this lab, choose Data Warehouse as the workload type.
-    Transaction Processing - Alternatively, you could have chosen Transaction Processing as the workload type.
-
-Choose a workload type.
-
-Choose a deployment type. Select the deployment type for your database from the choices:
-
-    Shared Infrastructure - For this lab, choose Shared Infrastructure as the deployment type.
-    Dedicated Infrastructure - Alternatively, you could have chosen Dedicated Infrastructure as the deployment type.
-
-Choose a deployment type.
-
-Configure the database:
-
-    Always Free - If your Cloud Account is an Always Free account, you can select this option to create an always free autonomous database. An always free database comes with 1 CPU and 20 GB of storage. For this lab, we recommend you leave Always Free unchecked.
-    Choose database version - Select a database version from the available versions.
-    OCPU count - Number of CPUs for your service. For this lab, specify 2 CPUs. Or, if you choose an Always Free database, it comes with 1 CPU.
-    Storage (TB) - Select your storage capacity in terabytes. For this lab, specify 1 TB of storage. Or, if you choose an Always Free database, it comes with 20 GB of storage.
-    Auto Scaling - For this lab, keep auto scaling enabled, to allow the system to automatically use up to three times more CPU and IO resources to meet workload demand.
-    New Database Preview - If a checkbox is available to preview a new database version, do NOT select it.
-
-Note: You cannot scale up/down an Always Free autonomous database.
-
-Choose the remaining parameters.
-
-Create administrator credentials:
-
-    Password and Confirm Password - Specify the password for ADMIN user of the service instance. The password must meet the following requirements:
-    The password must be between 12 and 30 characters long and must include at least one uppercase letter, one lowercase letter, and one numeric character.
-    The password cannot contain the username.
-    The password cannot contain the double quote (") character.
-    The password must be different from the last 4 passwords used.
-    The password must not be the same password that is set less than 24 hours ago.
-    Re-enter the password to confirm it. Make a note of this password.
-
-Enter password and confirm password.
-
-Choose network access:
-
-    For this lab, accept the default, "Allow secure access from everywhere".
-    If you want a private endpoint, to allow traffic only from the VCN you specify - where access to the database from all public IPs or VCNs is blocked, then select "Virtual cloud network" in the Choose network access area.
-    You can control and restrict access to your Autonomous Database by setting network access control lists (ACLs). You can select from 4 IP notation types: IP Address, CIDR Block, Virtual Cloud Network, Virtual Cloud Network OCID).
-
-Choose the network access.
-
-Choose a license type. For this lab, choose License Included. The two license types are:
-
-    Bring Your Own License (BYOL) - Select this type when your organization has existing database licenses.
-    License Included - Select this type when you want to subscribe to new database software licenses and the database cloud service.
-
-Click Create Autonomous Database.
-
-Click Create Autonomous Database.
-
-Your instance will begin provisioning. In a few minutes, the state will turn from Provisioning to Available. At this point, your Autonomous Data Warehouse database is ready to use! Have a look at your instance's details here including its name, database version, OCPU count, and storage size.
-
-- [Go to next lab 4](/gglab/step4.md)
+- [Go to next lab 4](step4.md)
