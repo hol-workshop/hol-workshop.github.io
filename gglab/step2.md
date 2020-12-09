@@ -1,4 +1,4 @@
-- [Go back to main](./README.md)
+- [Go back to main](/)
 - [Go back to previous step](step1.md)
 
 # Lab 2
@@ -115,7 +115,7 @@ We are almost done here, but we haven't configured anything about PostgreSQL dat
 
 ![](./files/pgsql/pg_6_1.png)
 
-You can download pre-created cloud-init file from **[here](./files/pgsql/ubuntu_ParkingData.sh)**. Download and save it as ubuntu_ParkingData.sh, How? Open the link in new tab, then choose "Raw" button and then "ctrl + s". Make sure to save these with correct extension **.sh** not txt!
+You need to download cloud-init file **[from here](./files/pgsql/ubuntu_ParkingData.sh)**. Make sure to save these with correct extension **.sh** not txt!
 
 #### Upload cloud-init file
 
