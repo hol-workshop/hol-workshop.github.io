@@ -1,4 +1,4 @@
-- [Go back to main](README.md)
+- [Go back to main](/)
 # Lab 1
 
 We will create a VCN.
