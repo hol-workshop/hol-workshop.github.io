@@ -1,4 +1,4 @@
-- [Go back to main](./README.md)
+- [Go back to main](/)
 - [Go back to previous step](step2.md)
 
 # Lab 3 - Create your target Autonomous Database
@@ -86,7 +86,7 @@ A new sign-in page opens, enter **ADMIN** in Username and enter your password.
 When you open the SQL Developer Web for first time, a series of pop-up informational boxes introduce you to the main features. Take a quick look at them. 
 
 
-Let's create our target tables for migration. Please download target table script **[from here](./files/atp/CreateTables.sql)**. Download and save it as CreateTable.sql, How? Open the link in new tab, then choose "Raw" button and then "ctrl + s". Make sure to save these with correct extension .sql not txt!
+Let's create our target tables for migration. Please download target table creation script **[from here](./files/atp/CreateTables.sql)**. Make sure to save these with correct extension .sql not txt!
 
 SQL Developer Web opens a worksheet tab, where you execute queries. Drag your downloaded CreateTables.sql and drop in the worksheet area. Then run create statements.
 
