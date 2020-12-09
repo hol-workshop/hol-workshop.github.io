@@ -1,4 +1,4 @@
-- [Go back to main](/README.md)
+- [Go back to main](README.md)
 # Lab 1
 
 We will create a VCN.
@@ -97,4 +97,4 @@ necessary ports
 This VCN will contain all of the other assets that you will create during this set of labs. In real-world situations, you would create multiple VCNs based on their need for access (which ports to open) and who can access them.
  
 
-- [Go to next lab 2](/gglab/step2.md)
+- [Go to next lab 2](step2.md)
