@@ -1,12 +1,12 @@
 
-- [Go back to main](./README.md)
+- [Go back to main](/)
 - [Go back to previous step](step3.md)
 
 # Lab 4 - Explore Oracle Marketplace and create your Goldengate instances
 
 Now let's continue to create your Oracle Goldengate Instances using Marketplace. This lab consists of 2 parts. 
 
-As you can see in architecture diagram, we will have to create 2 Goldengate instances, one for non-oracle and second is for Oracle databases. We have already created SOURCE in [Lab 2](/gglab/step2.md) and TARGET in [Lab 3](/gglab/step3.md).
+As you can see in architecture diagram, we will have to create 2 Goldengate instances, one for non-oracle and second is for Oracle databases. We have already created SOURCE in [Lab 2](step2.md) and TARGET in [Lab 3](step3.md).
 
 ![](/gglab/files/Architecture.png)
 
