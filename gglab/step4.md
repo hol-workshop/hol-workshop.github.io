@@ -1,6 +1,6 @@
 
-- [Go back to main](/README.md)
-- [Go back to previous step](/gglab/step3.md)
+- [Go back to main](./README.md)
+- [Go back to previous step](step3.md)
 
 # Lab 4 - Explore Oracle Marketplace and create your Goldengate instances
 
@@ -228,4 +228,4 @@ Before we going forward, let's just confirm everything we have:
  
 Now we are ready to proceed to fun part.
  
-- [Go to last lab 5](/gglab/step5.md)
+- [Go to last lab 5](step5.md)
