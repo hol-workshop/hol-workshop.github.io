@@ -1,4 +1,4 @@
-- [Go back to main](/)
+- [Go back to main](README.md)
 - [Go back to previous step](step1.md)
 
 # Lab 2
