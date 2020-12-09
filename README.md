@@ -26,3 +26,8 @@ Once you are successfully created your cloud account, you will receive a confirm
 - **LAB 4:** [Create your Goldengate instances](gglab/step4.md)
 - **LAB 5:** [Configure your migration](gglab/step5.md)
 - **Bonus Lab:** [Continous Replication](/README2.md)
+
+
+
+
+*Disclaimer: Views, ideas expressed are my own and do not necessarily reflect those of Oracle*
