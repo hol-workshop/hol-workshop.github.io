@@ -1,4 +1,4 @@
-- [Go back to main](./README.md)
+- [Go back to main](README.md)
 - [Go back to previous step](step4.md)
 
 ## LAB 5. Configure your Migration
