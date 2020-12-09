@@ -1,5 +1,5 @@
-- [Go back to main](/README.md)
-- [Go back to previous step](/gglab/step1.md)
+- [Go back to main](./README.md)
+- [Go back to previous step](step1.md)
 
 # Lab 2
 Now let's continue to create your source PostgreSQL database in Oracle Cloud Infrastructure. In order to do so, we would have to create a Compute resource with Ubuntu OS 20.4 version. This lab 2 consists of three small parts.
@@ -183,4 +183,4 @@ It should show you a 10000 records.
 
 Let's proceed to next lab.
 
-- [Go to next lab 3](/gglab/step3.md)
+- [Go to next lab 3](step3.md)
