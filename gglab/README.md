@@ -2,7 +2,7 @@
 
 Welcome to migration to ATP using Oracle Goldengate lab material. 
 
-![image](/files/Architecture.png)
+![image](files/Architecture.png)
 
 
 ## Pre-Requisites: Oracle Cloud Account
