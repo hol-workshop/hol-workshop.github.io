@@ -2,7 +2,20 @@
 - [Go back to previous step](step2.md)
 
 # Lab 3 - Create your target Autonomous Database
+In previous lab, we created our Source DB, now it is time to create our Target DB, which is Autonomous database. If you don't know about Autonomous database, please read following information or [jump directly to Part-1](#part-1-create-your-autonomous-database). This lab consists of two parts.
 
+#### What is an Autonomous Database?
+[An autonomous database](https://www.oracle.com/database/what-is-autonomous-database.html) is a cloud database that uses machine learning to automate database tuning, security, backups, updates, and other routine management tasks traditionally performed by DBAs. Unlike a conventional database, an autonomous database performs all these tasks and more without human intervention.  
+
+#### How does it work?
+An autonomous database leverages AI and machine learning to provide full, end-to-end automation for provisioning, security, updates, availability, performance, change management, and error prevention.
+
+In this respect, an autonomous database has specific characteristics.
+
+- It is self-driving. All database and infrastructure management, monitoring, and tuning processes are automated. DBAs can now focus on more important tasks, including data aggregation, modeling, processing, governance strategies, and helping developers use in-database features and functions with minimal changes to their application code.
+- It is self-securing Built-in capabilities protect against both external attacks and malicious internal users. This helps eliminate concerns about cyberattacks on unpatched or unencrypted databases.
+- It is self-repairing. This can prevent downtime, including unplanned maintenance. An autonomous database can require fewer than 2.5 minutes of downtime per month, including patching.
+ 
 #### What deployment options are available for Autonomous Database?
 
 There are 2 options for deploying an autonomous database.
@@ -11,12 +24,26 @@ There are 2 options for deploying an autonomous database.
 
 #### What type of workloads can your run in an Autonomous Database?
 
-An autonomous database consists of three key elements that align with workload types.
+[An autonomous database consists of three key elements](https://www.oracle.com/autonomous-database/) that align with workload types.
 - Data warehouse performs numerous functions related to business intelligence activities, and uses data that’s been prepared in advance for analysis. The data warehouse environment also manages all database lifecycle operations, can perform query scans on millions of rows, is scalable to business needs, and can be deployed in a matter of seconds.
 
 - Transaction processing enables time-based transactional processes such as real-time analytics, personalization, and fraud detection. Transaction processing typically involves a very small number of records, is based on predefined operations, and allows for simple application development and deployment.
 
-- JSON Database ... explanation 
+- JSON Database is a cloud document database service that makes it simple to develop JSON-centric applications. It features simple document APIs, serverless scaling, high performance ACID transactions, comprehensive security, and low pay-per-use pricing
+
+#### What benefits do we have?
+Autonomous databases offer many benefits. When you're ready to evaluate the offerings available to your organization, look for the following key features.
+
+- Auto-Provisioning: Automatically deploys mission-critical databases that are fault-tolerant and highly available. Enables seamless scale-out, protection in case of a server failure, and allows updates to be applied in a rolling fashion while apps continue to run.
+- Auto-Configuration: Automatically configures the database to optimize for specific workloads. Everything from the memory configuration, the data formats, and access structures are optimized to improve performance. Customers can simply load data and go.
+- Auto-Indexing: Automatically monitors workload and detects missing indexes that could accelerate applications. It validates each index to ensure its benefit before implementing it and uses machine learning to learn from its own mistakes.
+- Auto-Scaling: Automatically scales compute resources when needed by workload. All scaling occurs online while the application continuously runs. Enables true pay per use.
+- Automated Data Protection: Automatically protects sensitive and regulated data in the database, all via a unified management console. Assesses the security of your configuration, users, sensitive data, and unusual database activities.
+- Automated Security: Automatic encryption for the entire database, backups, and all network connections. No access to OS or admin privileges prevents phishing attacks. Protects the system from both cloud operations and any malicious internal users.
+- Auto-Backups: Automatic daily backup of database or on-demand. Restores or recovers a database to any point in time you specify in the last 60 days.
+- Auto-Patching: Automatically patches or upgrades with zero downtime. Applications continue to run as patching occurs in a round-robin fashion across cluster nodes or servers.
+- Automated Detection and Resolution: Using pattern recognition, hardware failures are automatically predicted without long timeouts. IOs are immediately redirected around unhealthy devices to avoid database hangs. Continuous monitoring for each database automatically generates service requests for any deviation.
+- Automatic Failover: Automatic failover with zero-data loss to standby. It’s completely transparent to end-user applications. Provides 99.995% SLA.
 
 ## PART 1: Create your Autonomous Database
 
