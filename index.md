@@ -1,8 +1,8 @@
-# Welcome to Hands-on-Lab page.
+# Available labs
 
  
 
-1. [Replicate your data from PostgreSQL to Autonomous Database lab](/gglab/README.md)
+1. [Migrate your database from PostgreSQL to Autonomous Database lab](/gglab/README.md)
 
 
 
