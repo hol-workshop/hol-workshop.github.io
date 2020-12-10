@@ -128,7 +128,7 @@ You need to download cloud-init file **[from here](./files/pgsql/ubuntu_ParkingD
 
 #### Upload cloud-init file
 
-Go to *Mangement tab* and **Choose cloud-init script file** and upload downloaded ubuntu_ParkingData.sh file, which will install postgresql database during your linux instance creation. 
+Go to *Management tab* and **Choose cloud-init script file** and upload downloaded ubuntu_ParkingData.sh file, which will install postgresql database during your linux instance creation. 
 
 ![](./files/pgsql/pg_6_2.png)
 
@@ -139,10 +139,11 @@ Review everything and click on "Create" button.
 ![](./files/pgsql/pg_7.png)
 
 _**NOTICE**: Just in case_ 
-_- if you ever see **Out of capacity for Shape ... in AD ...** that means selected shape has reached to max available limit in your selected AD.
-I'd advise you to try changing shape to **VM.Standard.E2.1** or AD to different on step [change shape](#change-shape) then continue._
 
-_- if you see **Out of capaity for Shape Standard.E2.1.Micro** means that Always free resource is currently unavailable in your Region, due to high demand.
+- _if you ever see **Out of capacity for Shape ... in AD ...** that means selected shape has reached to max available limit in your selected AD.
+I'd advise you to change shape to **VM.Standard.E2.1** or change AD to different in step [choose AD](#choose-your-availability-domain-ad-aka-available-datacentre) then continue._
+
+- _if you see **Out of capaity for Shape Standard.E2.1.Micro** means that Always free resource is currently unavailable in your Region, due to high demand.
 I'd advise you to try changing shape to **VM.Standard.E2.1** on step [change shape](#change-shape) then continue._
 
 ![](./files/pgsql/pg_7_1.png)
@@ -158,17 +159,17 @@ After you launch an instance, you can access it securely from your computer or f
 
 #### Connect to your instance 
 
-After you launch an instance, you can access it securely from your computer or from cloud shell. Let's open cloud shell and test your connection to your new PostgreSQL database you just created.
+Let's open cloud shell and test your connection to your new PostgreSQL database you just created. **Make sure** you copy IP address from instance details.
 
 ```
    ssh ubuntu@ip_address -i ~/.ssh/id_rsa
 ```
 
-Enter 'yes' when prompted for security message, and enter your passphrase.
+Enter 'yes' when prompted for security message, and enter your passphrase. See below image as your reference.
 
 ![](./files/pgsql/pg_9.png)
 
-Ubuntu instance is ready, let's continue.
+Ubuntu instance is ready, let's continue to next part.
 
 ## Part 3. Login to your PostgreSQLDB instance
 
@@ -193,6 +194,6 @@ It should show you a 10000 records.
 
 ![](./files/pgsql/pg_10_2.png)
 
-Let's proceed to next lab.
+We successfully provisioned our first VM in Oracle Cloud, installed PostgreSQL database already. Let's proceed to next lab.
 
 - [Go to next lab 3](step3.md)
