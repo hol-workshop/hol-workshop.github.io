@@ -95,7 +95,8 @@ It takes only 2-5 minutes to create fully working highly available, self running
 
 ![](./files/atp/autonomous_7.png)
 
-## PART 2
+## PART 2: Prepare target database for migration
+
 This part will run create target tables for GG migration and enable GG replication in Autonomous database.
 
 #### SQL developer web 
@@ -126,9 +127,7 @@ Run `alter user ggadmin identified by "GG##lab12345" account unlock;`
 
 ![](./files/atp/sql_dev_3.png)
 
-Let's just check whether the parameter enable_goldengate_replicaton is set to true, for some case it maybe set to false.
-
-Run `alter system set enable_goldengate_replication = true scope=both;`
+Let's run `alter system set enable_goldengate_replication = true scope=both;` to enable_goldengate_replicaton, check results.
 
 ![](./files/atp/sql_dev_4.png)
 
