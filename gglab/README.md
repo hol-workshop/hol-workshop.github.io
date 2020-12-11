@@ -1,4 +1,4 @@
-# Migrate your PostgreSQL to Oracle Database Cloud Service using Goldengate 
+# Migrate your PostgreSQL to Autonomous Database using Goldengate
 
 Welcome to migration to ATP using Oracle Goldengate lab material. 
 
